@@ -43,6 +43,7 @@ public class ProductService implements IProductService{
         List<Product> products = findAll();
         for (Product product: products) {
             if (product.getProductID() == newProduct.getProductID()) {
+                product.setName(newProduct.getName());
                 product.setPrice(newProduct.getPrice());
                 product.setQuantity(newProduct.getQuantity());
             }

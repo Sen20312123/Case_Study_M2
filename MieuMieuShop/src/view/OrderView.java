@@ -228,7 +228,7 @@ public class OrderView {
             System.out.println("Số điện thoại   :   " + order.getPhone());
             System.out.println("Địa chỉ         :   " + order.getAddress());
             System.out.println("֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎֎");
-            System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────────");
+            System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────");
         } catch (Exception e) {
             System.out.println("Lỗi !!! Vui lòng nhập lại !!!");
         }
@@ -237,7 +237,7 @@ public class OrderView {
     public void showPay(OrderItem orderItem) {
         try {
             System.out.printf("▐ %-30s ▐ %-15s ▐ %-15s ▐ %15s ▐\n", "Tên sản phẩm", "Số lượng", "Giá", "Tổng tiền cần thanh toán");
-            System.out.println("──────────────────────────────────────────────────────────────────────────────────────────────");
+            System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────");
             System.out.printf("▐ %-30s ▐ %-15d ▐ %-15s ▐ %15s          ▐\n",
                     orderItem.getProductName(),
                     orderItem.getQuantity(),
@@ -247,14 +247,14 @@ public class OrderView {
             System.out.println("──────────────────────────────────────────────────────────────────────────────────────────────");
             boolean is = true;
             do {
-                System.out.println("Nhập 'q' để trở lại ||  Nhập 't' để thoát chương trình");
+                System.out.println("Nhập 'b' để trở lại ||  Nhập 'e' để thoát chương trình");
                 System.out.print("⭆ ");
                 String choice = scanner.nextLine();
                 switch (choice) {
-                    case "q":
+                    case "b":
                         OrderViewLauncher.runOrder();
                         break;
-                    case "t":
+                    case "e":
                         AppUtils.exit();
                         break;
                     default:
@@ -280,14 +280,14 @@ public class OrderView {
             System.out.println("──────────────────────────────────────────────────────────────────────────────────────────────");
             boolean is = true;
             do {
-                System.out.println("Nhập 'q' để trở lại ||  Nhập 't' để thoát chương trình");
+                System.out.println("Nhập 'b' để trở lại ||  Nhập 'e' để thoát chương trình");
                 System.out.print(" ⭆ ");
                 String choice = scanner.nextLine();
                 switch (choice) {
-                    case "q":
+                    case "b":
                         MenuUser.runOderUser();
                         break;
-                    case "t":
+                    case "e":
                         AppUtils.exit();
                         break;
                     default:
@@ -306,7 +306,7 @@ public class OrderView {
         OrderItem newOrderItem = new OrderItem();
         double totalMoney = 0;
         try {
-            System.out.println("────────────────────────────────────────────────────────────── Doanh Thu ──────────────────────────────────────────────────────────────");
+            System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Doanh Thu ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             System.out.println("                                                                                                                                      ");
             System.out.printf("%-15s %-20s %-25s %-15s %-30s %-15s %-15s %-15s \n",
                     "   Id",
@@ -338,14 +338,14 @@ public class OrderView {
             }
             System.out.println("");
             System.out.println("Tổng doanh thu: " + AppUtils.doubleToVND(totalMoney) );
-            System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+            System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
             boolean is = true;
             do {
-                System.out.println("Nhập 'q' để trở lại || Nhập 'e' để thoát chương trình");
+                System.out.println("Nhập 'b' để trở lại || Nhập 'e' để thoát chương trình");
                 System.out.print("➽ ");
                 String choice = scanner.nextLine().toLowerCase();
                 switch (choice) {
-                    case "q":
+                    case "b":
                         break;
                     case "e":
                         AppUtils.exit();

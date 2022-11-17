@@ -9,14 +9,14 @@ public class MenuUser {
     public static void menuOderUser() {
         System.out.println("⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷");
         System.out.println("⋇      CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG MỸ PHẨM       ⋇");
-        System.out.println("⋇                     MIEU MIEU SHOP                ⋇");
+        System.out.println("⋇                   MIEU MIEU SHOP                  ⋇");
         System.out.println("⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷");
         System.out.println("                       MAIN MENU                     ");
         System.out.println("⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷");
         System.out.println("⋇                                                   ⋇");
         System.out.println("⋇                1. Mua sản phẩm                    ⋇");
         System.out.println("⋇                2. Hiện thị các sản phẩm           ⋇");
-        System.out.println("⋇               0. Đăng xuất                        ⋇");
+        System.out.println("⋇                0. Đăng xuất                       ⋇");
         System.out.println("⋇                                                   ⋇");
         System.out.println("⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷");
     }

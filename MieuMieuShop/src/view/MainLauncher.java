@@ -52,7 +52,7 @@ public class MainLauncher {
         System.out.println("⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷");
         System.out.println("⋇                                                   ⋇");
         System.out.println("⋇                1.Quản lý người dùng               ⋇");
-        System.out.println("⋇                2.Quản lý hàng hóa                 ⋇");
+        System.out.println("⋇                2.Quản lý sản phẩm                 ⋇");
         System.out.println("⋇                3.Quản lý đơn đặt hàng             ⋇");
         System.out.println("⋇                4.Đăng xuất                        ⋇");
         System.out.println("⋇                                                   ⋇");
@@ -115,7 +115,8 @@ public class MainLauncher {
         System.out.println("\t└───────────────────────────────────────────────────┘");
         System.out.println("\t│               【1】. Cập nhật giá                  │");
         System.out.println("\t│               【2】. Cập nhật số lượng             │");
-        System.out.println("\t│               【3】. Quay lại                      │");
+        System.out.println("\t│               【3】. Cập nhật tên                  │");
+        System.out.println("\t│               【4】. Quay lại                      │");
         System.out.println("\t└───────────────────────────────────────────────────┘");
         System.out.println("Chọn chức năng");
         System.out.printf("⭆ \t");

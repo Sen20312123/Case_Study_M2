@@ -15,12 +15,12 @@ public class AppUtils {
             try {
                 option = Integer.parseInt(scanner.nextLine());
                 if (option > max || option < min) {
-                    System.out.println("Chọn chức năng không đúng! Vui lóng nhập lại.!");
+                    System.out.println("Chọn chức năng không đúng! Vui lòng nhập lại.!");
                     continue;
                 }
                 break;
             } catch (Exception ex) {
-                System.out.println("Nhập sai! Nhập lại×͜×");
+                System.out.println("Nhập sai! Vui lòng nhập lại!!! ");
             }
         } while (true);
         return option;
@@ -34,7 +34,7 @@ public class AppUtils {
                 result = Integer.parseInt(scanner.nextLine());
                 return result;
             } catch (Exception ex) {
-                System.out.println("Nhập sai! Vui lòng nhập lại.×͜×");
+                System.out.println("Nhập sai! Vui lòng nhập lại!!!");
             }
         } while (true);
     }
@@ -46,11 +46,11 @@ public class AppUtils {
                 result = Double.parseDouble(scanner.nextLine());
                 return result;
             }catch (Exception ex) {
-                System.out.println("Nhập sai! Vui lòng nhập lại.×͜×");
+                System.out.println("Nhập sai! Vui lòng nhập lại!!!");
             }
         }while (true);
     }
-    public static String retrySring(String fieldName) {
+    public static String retryString(String fieldName) {
         String result;
         while ((result= scanner.nextLine()).isEmpty()) {
             System.out.printf("%s không được để trống\n", fieldName);
@@ -99,7 +99,7 @@ public class AppUtils {
         }while (true);
     }
     public static void exit() {
-        System.out.println("\t Cảm ơn quý khách. Hẹn gặp lại \uD83D\uDC4B!");
+        System.out.println("\t Cảm ơn quý khách. Hẹn gặp lại ☻☻☻!");
         System.exit(0);
     }
 }

@@ -25,10 +25,10 @@ public class AdminView {
         do {
             System.out.println("Tên tài khoản: ");
             System.out.print("➣");
-            String username = AppUtils.retrySring("Username");
+            String username = AppUtils.retryString("Username");
             System.out.println("Mật khẩu: ");
             System.out.print("➣");
-            String password = AppUtils.retrySring("Mật khẩu");
+            String password = AppUtils.retryString("Mật khẩu");
             User user = userService.adminLogin(username, password);
             if (user == null) {
                 System.out.println("Tài khoản không hợp lệ!");

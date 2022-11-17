@@ -31,7 +31,7 @@ public class ProductView {
                 break;
         }
         do {
-            nameProduct = AppUtils.retrySring("Tên sản phẩm");
+            nameProduct = AppUtils.retryString("Tên sản phẩm");
         } while (nameProduct.isEmpty());
         return nameProduct;
     }
@@ -107,10 +107,12 @@ public class ProductView {
                                 inputQuantity(id);
                                 break;
                             case 3:
+                                inputName(id);
+                            case 4:
                                 ProductViewLauncher.runProduct();
                                 break;
                             default:
-                                System.out.println("Không hợp lệ! Vui lòng nhập lại !");
+                                System.out.println("Chưa hợp lệ! Vui lòng nhập lại !");
                                 break;
                         }
                     } catch (Exception e) {
@@ -150,10 +152,10 @@ public class ProductView {
 
 
     public void show(List<Product> productList) {
-        System.out.println("──────────────────────────────────────── DANH SÁCH SẢN PHẨM ────────────────────────────────────────");
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         System.out.printf("%-25s▎ %-25s| %-15s| %-18s|", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
-        System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────────");
+        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────");
         for (Product product : productList) {
             System.out.printf("%-25s| %-25s| %-15s| %-13s     |\n",
                     product.getProductID(),
@@ -162,13 +164,13 @@ public class ProductView {
                     product.getQuantity());
         }
         System.out.println("");
-        System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────\n");
     }
 
 
     public void showProduct(InputOption option) {
         List<Product> productList = productService.findAll();
-        System.out.println("──────────────────────────────────────── DANH SÁCH SẢN PHẨM ────────────────────────────────────────");
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         System.out.printf("%-25s %-25s %-15s %17s", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
         for (Product product : productList) {
@@ -193,12 +195,22 @@ public class ProductView {
         System.out.println("Cập nhật thành công ✅ ");
     }
 
+    public void inputName(int id) {
+        Product product = productService.getProductByID(id);
+        System.out.print("Nhập tên muốn sửa : ");
+        System.out.print("➤ ");
+        String fullName = scanner.nextLine();
+        product.setName(fullName);
+        productService.update(product);
+        showProduct(InputOption.UPDATE);
+        System.out.println("Cập nhật thành công ✅");
+    }
     public void inputQuantity(int id) {
         Product product = productService.getProductByID(id);
         System.out.print("Nhập số lượng: ");
         System.out.print("➤ ");
-        int quartity = Integer.parseInt(scanner.nextLine());
-        product.setQuantity(quartity);
+        int quantity = Integer.parseInt(scanner.nextLine());
+        product.setQuantity(quantity);
         productService.update(product);
         showProduct(InputOption.UPDATE);
         System.out.println("Cập nhật thành công ✅");

@@ -82,7 +82,7 @@ public class UserView {
     }
 
     public void showUsers(InputOption inputOption) {
-        System.out.println("───────────────────────────────────────────────────────────────── DANH SÁCH NGƯỜI DÙNG ────────────────────────────────────────────────────────────────");
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH NGƯỜI DÙNG▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         System.out.printf("%-15s %-22s %-15s %-22s %-18s %-15s %-20s %-20s\n", "Id", "Tên", "Số điện thoại", "Email", "Địa chỉ", "Người dùng", "Ngày tạo", "Ngày cập nhật");
         List<User> users = userService.findAll();
         for (User user : users) {
@@ -233,7 +233,7 @@ public class UserView {
         System.out.print("⭆");
         String username;
         do {
-            if (!ValidateUtils.isUserNameValid(username = AppUtils.retrySring("Username"))) {
+            if (!ValidateUtils.isUserNameValid(username = AppUtils.retryString("Username"))) {
                 System.out.println("Không đúng định dạng. Vui lòng kiểm tra và nhập lại!");
                 System.out.print("⭆ ");
                 continue;
