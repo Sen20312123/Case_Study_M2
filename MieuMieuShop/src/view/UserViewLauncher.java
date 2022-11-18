@@ -52,13 +52,13 @@ public class UserViewLauncher {
 
     public static void login() {
         System.out.println("\t┌───────────────────────────────────────────┐");
-        System.out.println("\t│► ░░░░░░░░░░░░░░░░[LOGIN]░░░░░░░░░░░░░░░░ ◄│");
+        System.out.println("\t│► ░░░░░░░░░░░░░[MieuMieuShop]░░░░░░░░░░░░ ◄│");
         System.out.println("\t└───────────────────────────────────────────┘");
         System.out.println("\t│                1.Đăng ký                  │");
         System.out.println("\t│                2.Đăng nhập                │");
         System.out.println("\t│                0.Thoát                    │");
         System.out.println("\t└───────────────────────────────────────────┘");
-        System.out.println("Chọn chức năng");
+        System.out.println("Chọn chức năng (chọn số) :");
         System.out.print("➠ ");
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {

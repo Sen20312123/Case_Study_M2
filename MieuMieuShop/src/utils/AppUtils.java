@@ -38,6 +38,7 @@ public class AppUtils {
             }
         } while (true);
     }
+
     public static double retryParseDouble() {
         double result;
         do {

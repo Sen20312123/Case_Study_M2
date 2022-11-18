@@ -145,7 +145,7 @@ public class OrderView {
             long orderId = System.currentTimeMillis() / 1000;
             ProductView productView = new ProductView();
             productView.showProduct(InputOption.ADD);
-            System.out.println("Nhập chức năng:");
+            System.out.println("Nhập thông tin người nhận đơn:");
             System.out.println("Nhập họ và tên: (vd: Nguyễn Văn A) " + "Tên phải viết hoa chữ cái đầu)");
             System.out.print("➤ ");
             String name = scanner.nextLine();

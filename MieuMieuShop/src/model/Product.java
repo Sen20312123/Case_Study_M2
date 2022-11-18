@@ -8,6 +8,8 @@ public class Product implements Comparator<Product> {
     private double price;
     private int quantity;
 
+    private String trademark;
+
     public Product() {
     }
     public static Product parse(String record) {
@@ -16,14 +18,16 @@ public class Product implements Comparator<Product> {
         String name = fields[1];
         double price = Double.parseDouble(fields[2]);
         int quantity = Integer.parseInt(fields[3]);
-        return new Product(productID,name,price,quantity);
+        String trademark = fields[4];
+        return new Product(productID,name,price,quantity,trademark);
     }
 
-    public Product(long productID, String name, double price, int quantity) {
+    public Product(long productID, String name, double price, int quantity , String trademark) {
         this.productID = productID;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.trademark = trademark;
     }
 
     public long getProductID() {
@@ -58,12 +62,21 @@ public class Product implements Comparator<Product> {
         this.quantity = quantity;
     }
 
+    public String getTrademark() {
+        return trademark;
+    }
+
+    public void setTrademark(String trademark) {
+        this.trademark = trademark;
+    }
+
     @Override
     public String toString() {
         return  productID + ","
                 + name + ","
                 + price + ","
-                + quantity ;
+                + quantity + ","
+                + trademark;
     }
 
     @Override

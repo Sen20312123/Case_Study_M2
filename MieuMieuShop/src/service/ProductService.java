@@ -46,6 +46,7 @@ public class ProductService implements IProductService{
                 product.setName(newProduct.getName());
                 product.setPrice(newProduct.getPrice());
                 product.setQuantity(newProduct.getQuantity());
+                 product.setTrademark(newProduct.getTrademark());
             }
         }
         CSVUtils.writeFile(PATH, products);

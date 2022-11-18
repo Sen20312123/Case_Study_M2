@@ -36,6 +36,22 @@ public class ProductView {
         return nameProduct;
     }
 
+    public String inputTrademark(InputOption option) {
+        String trademarkProduct = "";
+        switch (option) {
+            case ADD:
+                System.out.println("Nhập tên thương hiệu : ");
+                break;
+            case UPDATE:
+                System.out.println("Nhập tên thương hiệu bạn muốn sửa: ");
+                break;
+        }
+        do {
+            trademarkProduct = AppUtils.retryString("Tên thương hiệu");
+        } while (trademarkProduct.isEmpty());
+        return trademarkProduct;
+    }
+
     public int inputQuantity(InputOption option) {
         switch (option) {
             case ADD:
@@ -80,7 +96,8 @@ public class ProductView {
             String nameProduct = inputNameProduct(InputOption.ADD);
             double price = inputPrice(InputOption.ADD);
             int quantity = inputQuantity(InputOption.ADD);
-            Product product = new Product((int) id, nameProduct, price, quantity);
+            String trademark = inputTrademark(InputOption.ADD);
+            Product product = new Product((int) id, nameProduct, price, quantity,trademark);
             productService.add(product);
             System.out.println("Sản phẩm đã được thêm thành công!✅");
             showProduct(InputOption.ADD);
@@ -109,6 +126,8 @@ public class ProductView {
                             case 3:
                                 inputName(id);
                             case 4:
+                                inputTrademark(id);
+                            case 5:
                                 ProductViewLauncher.runProduct();
                                 break;
                             default:
@@ -152,36 +171,38 @@ public class ProductView {
 
 
     public void show(List<Product> productList) {
-        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-        System.out.printf("%-25s▎ %-25s| %-15s| %-18s|", "ID", "Tên ", "Giá", "Số lượng");
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+        System.out.printf("%-25s▎ %-25s| %-15s| %-18s| %-20s|", "ID", "Tên ", "Giá", "Số lượng" , "Thương hiệu");
         System.out.println("");
-        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────");
+        System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
         for (Product product : productList) {
-            System.out.printf("%-25s| %-25s| %-15s| %-13s     |\n",
+            System.out.printf("%-25s| %-25s| %-15s| %-18s | %-20s   |\n",
                     product.getProductID(),
                     product.getName(),
                     decimalFormat.format(product.getPrice()),
-                    product.getQuantity());
+                    product.getQuantity(),
+                    product.getTrademark());
         }
         System.out.println("");
-        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+        System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
     }
 
 
     public void showProduct(InputOption option) {
         List<Product> productList = productService.findAll();
-        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-        System.out.printf("%-25s %-25s %-15s %17s", "ID", "Tên ", "Giá", "Số lượng");
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ DANH SÁCH SẢN PHẨM ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+        System.out.printf("%-25s %-25s %-15s %-20s %-20s", "ID", "Tên ", "Giá", "Số lượng" , "Thương hiệu");
         System.out.println("");
         for (Product product : productList) {
-            System.out.printf("%-25s %-25s %-15s %13s\n",
+            System.out.printf("%-25s %-25s %-15s %-20s %-20s\n",
                     product.getProductID(),
                     product.getName(),
                     decimalFormat.format(product.getPrice()),
-                    product.getQuantity());
+                    product.getQuantity(),
+                    product.getTrademark());
         }
         System.out.println("");
-        System.out.println("──────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+        System.out.println("──────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
     }
 
     public void inputPrice(int id) {
@@ -201,6 +222,17 @@ public class ProductView {
         System.out.print("➤ ");
         String fullName = scanner.nextLine();
         product.setName(fullName);
+        productService.update(product);
+        showProduct(InputOption.UPDATE);
+        System.out.println("Cập nhật thành công ✅");
+    }
+
+    public void inputTrademark(int id) {
+        Product product = productService.getProductByID(id);
+        System.out.print("Nhập tên thương hiệu muốn sửa : ");
+        System.out.print("➤ ");
+        String trademark = scanner.nextLine();
+        product.setTrademark(trademark);
         productService.update(product);
         showProduct(InputOption.UPDATE);
         System.out.println("Cập nhật thành công ✅");

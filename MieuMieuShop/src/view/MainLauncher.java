@@ -116,7 +116,8 @@ public class MainLauncher {
         System.out.println("\t│               【1】. Cập nhật giá                  │");
         System.out.println("\t│               【2】. Cập nhật số lượng             │");
         System.out.println("\t│               【3】. Cập nhật tên                  │");
-        System.out.println("\t│               【4】. Quay lại                      │");
+        System.out.println("\t│               【4】. Cập nhật tên thương hiệu      │");
+        System.out.println("\t│               【5】. Quay lại                      │");
         System.out.println("\t└───────────────────────────────────────────────────┘");
         System.out.println("Chọn chức năng");
         System.out.printf("⭆ \t");
