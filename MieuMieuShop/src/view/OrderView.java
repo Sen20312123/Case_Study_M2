@@ -306,7 +306,7 @@ public class OrderView {
         OrderItem newOrderItem = new OrderItem();
         double totalMoney = 0;
         try {
-            System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Doanh Thu ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Doanh Thu ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             System.out.println("                                                                                                                                      ");
             System.out.printf("%-15s %-20s %-25s %-15s %-30s %-15s %-15s %-15s \n",
                     "   Id",
@@ -317,6 +317,7 @@ public class OrderView {
                     "Số lượng",
                     "Giá",
                     "Tổng");
+            System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
             for (Order order : orders) {
                 for (OrderItem orderItem : orderItems) {
                     if (orderItem.getOrderId() == order.getId()) {
